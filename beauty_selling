@@ -1,0 +1,48 @@
+/*
+Assessment Requirements
+1. Create a variable that can hold a number of NFT's. What type of variable might this be?
+2. Create an object inside your mintNFT function that will hold the metadata for your NFTs. 
+   The metadata values will be passed to the function as parameters. When the NFT is ready, 
+   you will store it in the variable you created in step 1
+3. Your listNFTs() function will print all of your NFTs metadata to the console (i.e. console.log("Name: " + someNFT.name))
+4. For good measure, getTotalSupply() should return the number of NFT's you have created
+*/
+
+// create a variable to hold your NFT's
+const NFTs=[];
+
+// this function will take in some values as parameters, create an
+// NFT object using the parameters passed to it for its metadata, 
+// and store it in the variable above.
+    const mintNFT=function(_foundation,_range,_brand,_quality){
+const NFT={
+    foundation:_foundation,
+    range:_range,
+    brand:_brand,
+    quality:_quality,
+};
+NFTs.push(NFT);
+console.log('congratulation your NFT"${NFT.name}"has been minted sucessfully.n');
+
+};
+const printNFTs=function (){
+    console.log("ALL NFTs:\n");
+    for (let i=0;i< NFTs.length; i++){
+        console.log(`ID: ${i + 1}`);
+        console.log(`foundation: ${NFTs[i].foundation}`);
+        console.log(`range: ${NFTs[i].range}`);
+        console.log(`brand: ${NFTs[i].brand}`);
+        console.log(`quality: ${NFTs[i].quality}`);
+    }
+    console.log("Finished Printing all NFTS.\n")
+};
+const getTotalSupply =function(){
+    console.log('Total number of minted NFTs: ${NFTs.length}');
+};
+mintNFT("beautywise","115 ivory","lakme","liquid");
+mintNFT("crownjewel","310 sun","suger","compact");
+mintNFT("beautyhack","335 classic","huda beauty","dry");
+mintNFT("rosedelight","310 toffee","blue heaven","creamy");
+printNFTs();
+
+getTotalSupply()
